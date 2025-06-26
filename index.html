@@ -22,26 +22,18 @@
       perspective: 1200px;
       width: 100%;
       max-width: 800px;
-      padding: 10px;
+      padding: 20px;
     }
 
     .card {
       width: 100%;
-      max-width: 420px;
-      aspect-ratio: 1.7 / 1;
+      aspect-ratio: 1.75 / 1;
       position: relative;
       transform-style: preserve-3d;
       transition: transform 0.8s;
       cursor: pointer;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.18);
-      background: white;
-      margin: 0 auto;
-      min-height: 260px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     }
 
     .card.is-flipped {
@@ -56,7 +48,7 @@
       display: flex;
       flex-direction: column;
       box-sizing: border-box;
-      border-radius: 12px;
+      border-radius: 8px;
       overflow: hidden;
     }
 
@@ -66,96 +58,103 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 36px 18px;
+      padding: 40px;
     }
 
     .card-side.back {
       transform: rotateY(180deg);
-      background: #fff;
+      background: white;
       color: #333;
-      padding: 0;
-      justify-content: flex-start;
     }
 
+    /* Front side styling */
     .logo-container {
-      margin-bottom: 24px;
+      margin-bottom: 30px;
     }
 
     .logo {
-      width: 72px;
-      height: 72px;
+      width: 80px;
+      height: 80px;
       border: 3px solid white;
-      border-radius: 6px;
+      border-radius: 4px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto 18px;
+      margin: 0 auto 20px;
       position: relative;
     }
 
     .logo::after {
       content: '';
-      width: 36px;
-      height: 36px;
+      width: 40px;
+      height: 40px;
       border: 2px solid white;
       border-radius: 2px;
       position: absolute;
     }
 
     .company-name {
-      font-size: 2em;
+      font-size: 2.5em;
       font-weight: bold;
-      letter-spacing: 0.08em;
-      margin-bottom: 6px;
+      letter-spacing: 0.1em;
+      margin-bottom: 10px;
       line-height: 1.1;
+    }
+
+    .tagline {
+      font-size: 1em;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      opacity: 0.9;
     }
 
     /* Back side styling */
     .back-content {
       display: flex;
       height: 100%;
-      width: 100%;
     }
 
     .left-section {
       background: #2c2c2c;
-      width: 100px;
-      min-width: 70px;
+      width: 120px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: space-around;
       align-items: center;
-      padding: 24px 0;
+      padding: 30px 0;
+    }
+
+    .contact-icon {
+      width: 24px;
+      height: 24px;
+      fill: white;
+      margin-bottom: 15px;
     }
 
     .right-section {
       flex: 1;
-      padding: 24px 24px 18px 24px;
+      padding: 30px 40px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      min-width: 0;
     }
 
     .header-info {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      margin-bottom: 18px;
-      gap: 12px;
+      margin-bottom: 30px;
     }
 
     .name-title {
       flex: 1;
-      min-width: 0;
     }
 
     .name {
-      font-size: 1.35em;
+      font-size: 2.2em;
       font-weight: bold;
-      margin-bottom: 2px;
+      margin-bottom: 5px;
       line-height: 1.1;
-      word-break: break-word;
     }
 
     .title {
@@ -163,27 +162,45 @@
       color: #666;
       letter-spacing: 0.1em;
       border-bottom: 1px solid #ddd;
-      padding-bottom: 6px;
+      padding-bottom: 10px;
+    }
+
+    .logo-small {
+      width: 60px;
+      height: 60px;
+      border: 2px solid #333;
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      margin-top: 10px;
+    }
+
+    .logo-small::after {
+      content: '';
+      width: 30px;
+      height: 30px;
+      border: 1px solid #333;
+      border-radius: 2px;
+      position: absolute;
     }
 
     .contact-info {
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      min-width: 0;
+      gap: 15px;
     }
 
     .contact-item {
       display: flex;
-      align-items: flex-start;
-      font-size: 1em;
+      align-items: center;
+      font-size: 1.1em;
       cursor: pointer;
       transition: all 0.2s ease;
-      padding: 7px;
+      padding: 8px;
       border-radius: 4px;
       user-select: all;
-      min-width: 0;
-      word-break: break-word;
     }
 
     .contact-item:hover {
@@ -193,7 +210,7 @@
     .contact-item svg {
       width: 20px;
       height: 20px;
-      margin-right: 10px;
+      margin-right: 15px;
       flex-shrink: 0;
       fill: #666;
     }
@@ -201,22 +218,19 @@
     .contact-text {
       pointer-events: none;
       line-height: 1.3;
-      word-break: break-word;
-      min-width: 0;
     }
 
     .company-footer {
       text-align: right;
-      font-size: 1em;
+      font-size: 1.2em;
       font-weight: bold;
       color: #333;
-      margin-top: 12px;
-      word-break: break-word;
+      margin-top: 20px;
     }
 
     .message {
-      margin-top: 18px;
-      font-size: 0.92rem;
+      margin-top: 20px;
+      font-size: 0.9rem;
       color: #666;
       text-align: center;
     }
@@ -237,79 +251,57 @@
     }
 
     /* Responsive design */
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
       .card {
-        max-width: 98vw;
-        min-height: 340px;
-        aspect-ratio: unset;
-        height: auto;
+        aspect-ratio: 1.4 / 1;
       }
-      .card-side.front {
-        padding: 28px 8px;
+
+      .company-name {
+        font-size: 1.8em;
       }
-      .back-content {
-        flex-direction: column;
-      }
+
       .left-section {
-        width: 100%;
-        min-width: 0;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
-        padding: 12px 12px 0 12px;
-        background: #222;
-        border-radius: 0 0 10px 10px;
-        min-height: 50px;
+        width: 80px;
+        padding: 20px 0;
       }
+
       .right-section {
-        padding: 16px 10px 10px 10px;
-        min-width: 0;
+        padding: 20px 25px;
       }
+
+      .name {
+        font-size: 1.8em;
+      }
+
+      .contact-item {
+        font-size: 1em;
+      }
+
       .header-info {
         flex-direction: column;
-        gap: 8px;
-        margin-bottom: 12px;
+        gap: 20px;
       }
-      .company-footer {
-        margin-top: 8px;
-        font-size: 0.98em;
-      }
-      .contact-item {
-        font-size: 0.98em;
-        padding: 7px 4px;
-      }
-      .company-name {
-        font-size: 1.25em;
-      }
-      .name {
-        font-size: 1.1em;
+
+      .logo-small {
+        align-self: flex-end;
       }
     }
 
-    @media (max-width: 400px) {
-      .card {
-        min-height: 360px;
-        max-width: 100vw;
-      }
-      .logo {
-        width: 54px;
-        height: 54px;
-      }
-      .logo::after {
-        width: 26px;
-        height: 26px;
-      }
+    @media (max-width: 480px) {
       .company-name {
-        font-size: 1em;
+        font-size: 1.5em;
       }
+
       .name {
-        font-size: 1em;
+        font-size: 1.5em;
       }
+
       .right-section {
-        padding: 8px 2vw 6px 2vw;
+        padding: 15px 20px;
       }
+
       .contact-item {
-        font-size: 0.95em;
+        font-size: 0.9em;
       }
     }
   </style>
@@ -323,18 +315,21 @@
         </div>
         <div class="company-name">JHV<br>ENTERPRISE</div>
       </div>
+      
       <div class="card-side back">
         <div class="back-content">
           <div class="left-section">
-            <!-- Optionally, place a small logo or icon here for mobile -->
           </div>
+          
           <div class="right-section">
             <div class="header-info">
               <div class="name-title">
                 <div class="name">VISHAL TALATHI</div>
-                <div class="title"></div>
+                <div class="name"></div>
+                 <div class="title"></div>
               </div>
             </div>
+            
             <div class="contact-info">
               <div class="contact-item" data-type="phone" data-value="9765459690">
                 <svg viewBox="0 0 24 24">
@@ -342,12 +337,14 @@
                 </svg>
                 <span class="contact-text">9765459690</span>
               </div>
+              
               <div class="contact-item" data-type="email" data-value="jhvgoa@gmail.com">
                 <svg viewBox="0 0 24 24">
                   <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
                 </svg>
                 <span class="contact-text">jhvgoa@gmail.com</span>
               </div>
+              
               <div class="contact-item" data-type="address" data-value="SH-1, Madhumat Apartment, Sashwada, Bodem, Bicholim, Goa - 403 504">
                 <svg viewBox="0 0 24 24">
                   <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
@@ -355,46 +352,60 @@
                 <span class="contact-text">SH-1, Madhumat Apartment,<br>Sashwada, Bodem,<br>Bicholim, Goa - 403 504</span>
               </div>
             </div>
+            
             <div class="company-footer">JHV ENTERPRISE</div>
           </div>
         </div>
       </div>
     </div>
   </div>
+  
   <div class="message" style="font-family: 'Times New Roman', Times, serif;">Click the card to flip and view contact details</div>
   <div class="copy-message" id="copyMessage"></div>
+
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const card = document.getElementById('businessCard');
+      
+      // Card flip functionality
       card.addEventListener('click', function(e) {
         if (!e.target.closest('.contact-item')) {
           this.classList.toggle('is-flipped');
         }
       });
+
+      // Contact item interactions
       const contactItems = document.querySelectorAll('.contact-item');
+      
       contactItems.forEach(item => {
         item.addEventListener('click', function(e) {
           e.stopPropagation();
+          
           const type = this.getAttribute('data-type');
           const value = this.getAttribute('data-value');
+          
           if (!type || !value) return;
+
+          // Handle different contact types
           if (type === 'phone') {
+            // Create and download vCard
             const vcard = [
               "BEGIN:VCARD",
               "VERSION:3.0",
-              "FN:Vishal Talathi",
+              "FN:Vishal Takahi",
               "ORG:JHV ENTERPRISE",
               "TEL;TYPE=CELL:" + value,
               "EMAIL:jhvgoa@gmail.com",
               "ADR;TYPE=WORK:;;SH-1, Madhumat Apartment, Sashwada, Bodem, Bicholim, Goa - 403 504;;;;",
               "END:VCARD"
             ].join("\r\n");
+            
             try {
               const blob = new Blob([vcard], { type: "text/vcard;charset=utf-8" });
               const url = URL.createObjectURL(blob);
               const a = document.createElement('a');
               a.href = url;
-              a.download = "Vishal_Talathi_Contact.vcf";
+              a.download = "Vishal_Takahi_Contact.vcf";
               a.style.display = 'none';
               document.body.appendChild(a);
               a.click();
@@ -406,12 +417,15 @@
             }
             return;
           }
+          
+          // Handle email and address links
           let link;
           if (type === 'email') {
             link = `mailto:${value}`;
           } else if (type === 'address') {
             link = `https://www.google.com/maps?q=${encodeURIComponent(value)}`;
           }
+          
           if (link) {
             try {
               window.open(link, '_blank');
@@ -419,10 +433,13 @@
               console.error('Error opening link:', error);
             }
           }
+          
+          // Copy to clipboard
           copyToClipboard(value, type);
         });
       });
     });
+
     function copyToClipboard(text, type) {
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(text).then(() => {
@@ -434,6 +451,7 @@
         fallbackCopyToClipboard(text, type);
       }
     }
+
     function fallbackCopyToClipboard(text, type) {
       const textArea = document.createElement('textarea');
       textArea.value = text;
@@ -443,6 +461,7 @@
       document.body.appendChild(textArea);
       textArea.focus();
       textArea.select();
+      
       try {
         const successful = document.execCommand('copy');
         if (successful) {
@@ -451,12 +470,15 @@
       } catch (err) {
         showCopyMessage('Copy failed');
       }
+      
       document.body.removeChild(textArea);
     }
+
     function showCopyMessage(message) {
       const copyMessage = document.getElementById('copyMessage');
       copyMessage.textContent = message;
       copyMessage.style.display = 'block';
+      
       setTimeout(() => {
         copyMessage.style.display = 'none';
       }, 2500);
@@ -464,4 +486,3 @@
   </script>
 </body>
 </html>
-
